@@ -1,0 +1,23 @@
+{
+  "updated": "2026-11-24",
+  "note": "Ngày nghỉ lễ Việt Nam. Năm 'complete': true thì chỉ dùng đúng danh sách 'off'. Năm 'complete': false (hoặc không có) thì app bổ sung thêm theo quy tắc. Mỗi năm khi Chính phủ công bố lịch nghỉ, sửa file này rồi commit lên GitHub, widget tự cập nhật trong vòng 24 giờ.",
+  "years": {
+    "2026": {
+      "complete": true,
+      "off": [
+        "2026-01-01", "2026-01-02",
+        "2026-02-16", "2026-02-17", "2026-02-18", "2026-02-19", "2026-02-20",
+        "2026-04-26", "2026-04-27",
+        "2026-04-30", "2026-05-01",
+        "2026-08-31", "2026-09-01", "2026-09-02"
+      ]
+    },
+    "2027": {
+      "complete": false,
+      "off": [
+        "2027-02-04", "2027-02-05", "2027-02-06", "2027-02-07", "2027-02-08", "2027-02-09", "2027-02-10",
+        "2027-09-02", "2027-09-03"
+      ]
+    }
+  }
+}

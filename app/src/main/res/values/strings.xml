@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Âm lịch widget</string>
+    <string name="widget_label">Âm lịch Việt Nam</string>
+    <string name="widget_label_weather">Đồng hồ &amp; thời tiết</string>
+</resources>

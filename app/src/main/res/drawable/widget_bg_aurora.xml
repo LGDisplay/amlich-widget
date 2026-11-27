@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Kính màu bán trong suốt cho widget thời tiết (Android không cho widget làm mờ hình nền thật).
+  lớp 1: màu xanh tím chuyển hồng, đủ đậm để chữ trắng đọc rõ trên hình nền sáng
+  lớp 2: ánh sáng trắng chạy từ trên xuống
+  lớp 3: viền sáng mảnh
+  Muốn trong suốt hơn: giảm số alpha (2 ký tự đầu của mã màu, ví dụ EB -> C0).
+-->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:angle="0"
+                android:startColor="#EB4264C4"
+                android:centerColor="#EB785CB4"
+                android:endColor="#EBA85C92" />
+            <corners android:radius="20dp" />
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:angle="270"
+                android:startColor="#47FFFFFF"
+                android:centerColor="#0FFFFFFF"
+                android:endColor="#00FFFFFF" />
+            <corners android:radius="20dp" />
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="rectangle">
+            <stroke
+                android:width="1dp"
+                android:color="#66FFFFFF" />
+            <corners android:radius="20dp" />
+        </shape>
+    </item>
+</layer-list>

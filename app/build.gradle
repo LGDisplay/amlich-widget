@@ -1,0 +1,55 @@
+plugins {
+    id 'com.android.application'
+}
+
+// Khi build trên GitHub Actions, các biến này tự có sẵn nên app biết
+// phải tải file ngày nghỉ từ chính repo của bạn.
+def repo = System.getenv('GITHUB_REPOSITORY') ?: 'OWNER/REPO'
+def branch = System.getenv('GITHUB_REF_NAME') ?: 'main'
+
+android {
+    namespace 'vn.amlich.widget'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId 'vn.amlich.widget'
+        minSdk 26
+        targetSdk 34
+        versionCode 2
+        versionName '2.0'
+        buildConfigField 'String', 'HOLIDAY_URL',
+                ("\"https://raw.githubusercontent.com/${repo}/${branch}/app/src/main/assets/holidays.json\"").toString()
+    }
+
+    buildFeatures {
+        buildConfig true
+    }
+
+    lint {
+        abortOnError false
+        checkReleaseBuilds false
+    }
+
+    // Khóa ký cố định để bản build sau cài đè lên bản trước được (không phải gỡ app).
+    signingConfigs {
+        release {
+            storeFile file('release.keystore')
+            storePassword 'amlich2026'
+            keyAlias 'amlich'
+            keyPassword 'amlich2026'
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            signingConfig signingConfigs.release
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+        encoding 'UTF-8'
+    }
+}

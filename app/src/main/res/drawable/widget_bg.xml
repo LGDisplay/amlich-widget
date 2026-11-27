@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Kính mờ giả lập (Android không cho widget làm mờ hình nền thật):
+  lớp 1: nền tối bán trong suốt giữ cho chữ dễ đọc trên mọi hình nền
+  lớp 2: ánh sáng trắng chạy từ trên xuống
+  lớp 3: viền sáng mảnh
+  Muốn trong suốt hơn: giảm số alpha (2 ký tự đầu của mã màu, 00 = trong suốt hoàn toàn, FF = đặc).
+-->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:angle="270"
+                android:startColor="#6628304A"
+                android:endColor="#8010131C" />
+            <corners android:radius="22dp" />
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:angle="270"
+                android:startColor="#3DFFFFFF"
+                android:centerColor="#0FFFFFFF"
+                android:endColor="#05FFFFFF" />
+            <corners android:radius="22dp" />
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="rectangle">
+            <stroke
+                android:width="1dp"
+                android:color="#55FFFFFF" />
+            <corners android:radius="22dp" />
+        </shape>
+    </item>
+</layer-list>
